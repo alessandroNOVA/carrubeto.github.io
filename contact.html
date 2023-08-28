@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- ... (head content) -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Contatti</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var myLatLng = {lat: 41.902783, lng: 12.496366}; // Replace with your desired coordinates
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 15
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Indirizzo della nostra sede'
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- ... (header content) -->
+    </header>
+    <section class="contact-section">
+        <h1>Contattaci</h1>
+        <p>Hai domande o commenti? Compila il modulo qui sotto per contattarci.</p>
+        <form action="#" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="description">Descrizione:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <button type="submit">Invia</button>
+        </form>
+        <div id="map"></div>
+    </section>
+    <footer>
+        <!-- ... (footer content) -->
+    </footer>
+</body>
+</html>
